@@ -4,12 +4,12 @@ steps:
       [
         'build',
         '-t',
-        'sep14/$PROJECT_ID/python-sample-app:LATEST',
+        'sep14/$PROJECT_ID/python-sample-app:$COMMIT_SHA',
         './app'
       ]
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg/$PROJECT_ID/sep14/python-sample-app:LATEST']
+    args: ['push', 'us-central1-docker.pkg/$PROJECT_ID/sep14/python-sample-app:$COMMIT_SHA']
 
 options:
   logging: CLOUD_LOGGING_ONLY
