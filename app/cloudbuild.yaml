@@ -9,7 +9,9 @@ steps:
       ]
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/python-sample-app:$COMMIT_SHA']
+    args: ['push', 'LOCATION-docker.pkg/$PROJECT_ID/sep14/python-sample-app:$COMMIT_SHA']
 
 options:
-      logging: CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY
+
+
