@@ -4,7 +4,7 @@ steps:
       [
         'build',
         '-t',
-        'sep14/$PROJECT_ID/python-sample-app:$COMMIT_SHA',
+        'us-central1-docker.pkg/$PROJECT_ID/sep14/python-sample-app'
         './app'
       ]
 
@@ -13,5 +13,6 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY
+
 
 
