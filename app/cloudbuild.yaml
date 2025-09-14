@@ -10,17 +10,3 @@ steps:
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/python-sample-app:$COMMIT_SHA']
-
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args:
-      [
-        'deploy', 'releases', 'create', 'release-$BUILD_ID',
-        '--project=$PROJECT_ID',
-        '--region=us-central1',
-        '--delivery-pipeline=python-app-pipeline',
-        '--images=python-sample-app=gcr.io/$PROJECT_ID/python-sample-app:$COMMIT_SHA'
-      ]
-
-images:
-  - 'gcr.io/$PROJECT_ID/python-sample-app:$COMMIT_SHA'
