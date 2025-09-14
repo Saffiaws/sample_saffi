@@ -4,12 +4,12 @@ steps:
       [
         'build',
         '-t',
-        'us-central1-docker.pkg.dev/saffi-1/sep14/$PROJECT_ID/sep14/python-sample-app:${SHORT_SHA}',
+        'us-central1-docker.pkg.dev/$PROJECT_ID/sep14/$PROJECT_ID/sep14/python-sample-app:${SHORT_SHA}',
         './app'
       ]
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/saffi-1/sep14/$PROJECT_ID/sep14/python-sample-app:${SHORT_SHA}']
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/sep14/$PROJECT_ID/sep14/python-sample-app:${SHORT_SHA}']
 
 options:
   logging: CLOUD_LOGGING_ONLY
